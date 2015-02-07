@@ -1,0 +1,18 @@
+<h1>Products</h1>
+<p>
+  <%= link_to "Create Product", new_product_path %>
+</p>
+
+
+<% @products.each do |product| %>
+<p>
+  <b>Product Name</b> <%= product.name %>
+  <b>Product Description</b> <%= product.description %>
+  <b>Price</b> <%= product.price %>
+  <b>Created At</b> <%= product.created_at %>
+  <b>Updated At</b> <%= product.updated_at %>
+  <%= link_to "Show", product_path(product[:id]) %>
+  <%= link_to "Edit", edit_product_path(product[:id]) %>
+  <%= link_to "Destroy", product_path(product[:id]), method: :delete, data: {confirm: "Are you sure?"} %>
+</p>
+<% end %>

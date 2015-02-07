@@ -1,0 +1,8 @@
+<h1>Product Show Page</h1>
+<p>Name: <%= @product.name %></p>
+<p>Description: <%= @product.description %></p>
+<p>Price: <%= @product.price %></p>
+<p>Created At: <%= @product.created_at %></p>
+<p>Updated At: <%= @product.updated_at %></p>
+<%= link_to "Edit Product", edit_product_path %>
+<%= link_to "Delete Product", product_path(@product), method: :delete, data: {confirm:"Are you sure?"} %>
